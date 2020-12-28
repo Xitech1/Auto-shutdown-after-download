@@ -1,0 +1,51 @@
+﻿<Window x:Class="AutoShutdownAfterDownload.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:AutoShutdownAfterDownload"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*" />
+            <ColumnDefinition Width="1*" />
+            <ColumnDefinition Width="1*" />
+            <ColumnDefinition Width="1*" />
+            <ColumnDefinition Width="1*" />
+            <ColumnDefinition Width="1*" />
+            <ColumnDefinition Width="1*" />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="2" Grid.Column="3">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1*" />
+                <ColumnDefinition Width="1*" />
+            </Grid.ColumnDefinitions>
+            <!--<Button Grid.Column="0" Grid.Row="0">&lt;</Button>-->
+            <Button Grid.Column="1" Grid.Row="0" Click="btn_MoveToSelected">&gt;</Button>
+        </Grid>
+
+        <Button Grid.Column="3" Grid.Row="6" Name="btn_activateAutoShutDown" Click="btn_activateAutoShutDown_Click">
+            <TextBlock TextAlignment="Center">Activate<LineBreak/>Autoshutdown</TextBlock>
+        </Button>
+
+        <Label Grid.ColumnSpan="3" Grid.Column="0" HorizontalContentAlignment="Center" FontWeight="Bold" Margin="0,0,0,30">Select application to track when download is finished:</Label>
+        <Label Grid.ColumnSpan="3" Grid.Column="4" Grid.Row="0" HorizontalContentAlignment="Center" FontWeight="Bold" Margin="0,0,0,30">Currently selected:</Label>
+        <Label Grid.ColumnSpan="3" Grid.Column="4" Grid.Row="3" HorizontalContentAlignment="Center" FontWeight="Bold" Margin="0,0,0,30">Autoshutdown currently active on:</Label>
+
+        <TextBox Grid.Row="3" Grid.Column="4" Grid.ColumnSpan="3" HorizontalContentAlignment="Center" VerticalAlignment="Center" Text="Not active..." IsEnabled="False" Margin="0,20,0,0" Name="txtbox_currentlyActive"></TextBox>
+
+        <DataGrid Grid.Column="0" Grid.ColumnSpan="3" Grid.RowSpan="5" Name="grid_process" Margin="0,40,0,0" ></DataGrid>
+        <DataGrid Grid.Column="4" Grid.ColumnSpan="3" Grid.RowSpan="2" Name="grid_selected" Margin="0,40,0,0" ></DataGrid>
+
+    </Grid>
+</Window>
